@@ -2,6 +2,7 @@
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: "Barlow";
+  font-style: normal;
   font-weight: 400;
   src: url("./fonts/barlow-v12-latin-regular.woff2") format("woff2"), /* Chrome 36+, Opera 23+, Firefox 39+ */
   url("./fonts/barlow-v12-latin-regular.woff") format("woff"); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
@@ -10,17 +11,28 @@
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: "Barlow";
+  font-style: normal;
   font-weight: 700;
   src: url("./fonts/barlow-v12-latin-700.woff2") format("woff2"), /* Chrome 36+, Opera 23+, Firefox 39+ */
   url("./fonts/barlow-v12-latin-700.woff") format("woff"); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* fraunces-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/fraunces-v31-latin-regular.woff2") format("woff2"), /* Chrome 36+, Opera 23+, Firefox 39+ */
+  url("../fonts/fraunces-v31-latin-regular.woff") format("woff"); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* fraunces-900 - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: "Fraunces";
+  font-style: normal;
   font-weight: 900;
-  src: url("./fonts/fraunces-v31-latin-900.woff2") format("woff2"), /* Chrome 36+, Opera 23+, Firefox 39+ */
-  url("./fonts/fraunces-v31-latin-900.woff") format("woff"); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: url("../fonts/fraunces-v31-latin-900.woff2") format("woff2"), /* Chrome 36+, Opera 23+, Firefox 39+ */
+  url("../fonts/fraunces-v31-latin-900.woff") format("woff"); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 * {
   box-sizing: border-box;
@@ -29,7 +41,7 @@ html {
   height: 100%;
 }
 body {
-  font-family: "Fraunces", "Arial", sans-serif;
+  font-family: "Barlow", "Arial", sans-serif;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -96,7 +108,7 @@ nav {
   width: 100%;
 }
 .hero__title {
-  font-family: "Fraunces 9pt";
+  font-family: "Fraunces";
   font-weight: 900;
   margin-top: 0;
   margin-bottom: 24px;
@@ -115,7 +127,7 @@ nav {
   opacity: 0.8;
 }
 .hero__link {
-  font-family: "Fraunces 9pt";
+  font-family: "Fraunces";
   font-weight: 900;
   display: inline-block;
   padding: 16px 31px;
@@ -126,31 +138,55 @@ nav {
   border-radius: 6px;
   text-decoration-line: none;
 }
-.our-collection__title {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 120px;
-  text-align: center;
-  background-image: linear-gradient(180deg, rgba(254, 252, 247, 0.0001) 0%, #fefcf7 100%);
+.our-collection {
+  position: relative;
+  margin-bottom: 180px;
+}
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.our-collection__wrapper {
+  margin: 0 auto;
+  background-image: url("./images/ourcollection.svg");
+  background-position: center calc(0% + 110px);
+  background-size: 320px 72px;
+  background-repeat: no-repeat;
+}
+.visually-hiddin {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 .our-collection__list {
-  /* width: 282px; */
-  margin: 0 auto;
+  margin: 0;
   padding-left: 0;
   list-style: none;
+}
+.our-collection__item {
+  display: block;
+  margin: 0 auto;
+}
+.our-collection__item:nth-child(1){
+  padding-top: 205px;
 }
 .our-collection__img {
   display: block;
   margin: 0 auto 24px;
 }
 .our-collection__inner {
-  min-width: 282px;
-  max-width: 350px;
+  max-width: 282px;
   width: 100%;
   margin: 0 auto;
 }
 .our-collection__subtitle {
-  font-family: "Fraunces 9pt";
+  font-family: "Fraunces";
   font-weight: 900;
   margin-top: 0;
   margin-bottom: 16px;
@@ -166,7 +202,7 @@ nav {
   font-size: 15px;
   line-height: 25px;
   text-align: center;
-  color: #333D4B;
+  color: #333d4b;
 }
 @media only screen and (min-width: 375px) {
   .hero__wrapper {
@@ -189,11 +225,74 @@ nav {
     width: 100%;
   }
   .hero__title {
-    font-family: "Fraunces 9pt";
+    font-family: "Fraunces";
     font-weight: 900;
     font-size: 48px;
     line-height: 48px;
     color: #fefcf7;
+  }
+  .our-collection__wrapper {
+    margin: 0 auto;
+    background-image: url("./images/ourcollection.svg");
+    background-position: center calc(0% + 120px);
+    background-size: 390px 90px;
+    background-repeat: no-repeat;
+  }
+  .our-collection__item:not(:last-child) {
+    margin-bottom: 48px;
+  }
+  .our-collection__inner {
+    max-width: 350px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .our-collection__subtitle {
+    font-family: "Fraunces";
+    font-weight: 900;
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+    color: #333d4b;
+  }
+  .our-collection__text {
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 15px;
+    line-height: 25px;
+    text-align: center;
+    color: #333d4b;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  .our-collection__wrapper {
+    margin: 0 auto;
+    background-image: url("./images/ourcollection.svg");
+    background-position: center calc(0% + 120px);
+    background-size: 575px 110px;
+    background-repeat: no-repeat;
+  }
+  .our-collection__item {
+    display: flex;
+    justify-content: center;
+  }
+  .our-collection__item:not(:last-child) {
+    margin-bottom: 47px;
+  }
+  .our-collection__inner {
+    max-width: 282px;
+    width: 100%;
+    margin: 0;
+  }
+  .our-collection__subtitle {
+    padding-top: 20px;
+    text-align: left;
+  }
+  .our-collection__text {
+    text-align: left;
   }
 }
 
@@ -241,12 +340,73 @@ nav {
   }
   
   .hero__title {
-    font-family: "Fraunces 9pt";
+    font-family: "Fraunces";
     font-weight: 900;
     font-size: 48px;
     line-height: 48px;
     color: #fefcf7;
     font-size: 48px;
+  }
+  .our-collection__wrapper {
+    margin: 0 auto;
+    background-image: url("./images/ourcollection.svg");
+    background-position: center calc(0% + 125px);
+    background-size: 650px 115px;
+    background-repeat: no-repeat;
+  }
+  .our-collection__item {
+    display: flex;
+    justify-content: center;
+  }
+  .our-collection__img {
+    display: inline-block;
+    max-width: 220px;
+    width: 100%;
+    max-height: 193px;
+    height: 100%;
+    margin: 0;
+  }
+  .our-collection__inner {
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 650px) {
+  .our-collection__wrapper {
+    margin: 0 auto;
+    background-image: url("./images/ourcollection.svg");
+    background-position: center calc(0% + 125px);
+    background-size: 750px 135px;
+    background-repeat: no-repeat;
+  }
+  .our-collection__item {
+    display: flex;
+    justify-content: center;
+  }
+  .our-collection__img {
+    display: inline-block;
+    max-width: 240px;
+    width: 100%;
+    max-height: 200px;
+    height: 100%;
+    margin: 0;
+  }
+  .our-collection__inner {
+    max-width: 350px;
+    width: 100%;
+    margin: 0;
+    /* padding-top: 20px; */
+  }
+  .our-collection__subtitle {
+    font-size: 28px;
+    line-height: 32px;
+    padding-top: 20px;
+    text-align: left;
+  }
+  .our-collection__text {
+    font-size: 18px;
+    line-height: 25px;
+    text-align: left;
   }
   
 }
@@ -278,11 +438,25 @@ nav {
     width: 100%;
   }
   .hero__title {
-    font-family: "Fraunces 9pt";
+    font-family: "Fraunces";
     font-weight: 900;
     font-size: 60px;
     line-height: 60px;
     color: #fefcf7;
+  }
+  .our-collection__wrapper {
+    margin: 0 auto;
+    background-image: url("./images/ourcollection.svg");
+    background-position: center calc(0% + 125px);
+    background-size: 800px 140px;
+    background-repeat: no-repeat;
+  }
+  .our-collection__item {
+    display: flex;
+    justify-content: center;
+  }
+  .our-collection__inner {
+    margin: 0;
   }
 }
 @media only screen and (min-width: 900px) {
@@ -298,7 +472,7 @@ nav {
     border-radius: 10px;
   }
   .hero__inner {
-    max-width: 445px;
+    max-width: 493px;
     width: 100%;
   }
   .hero__div {
@@ -306,11 +480,15 @@ nav {
     width: 100%;
   }
   .hero__title {
-    font-family: "Fraunces 9pt";
+    font-family: "Fraunces";
     font-weight: 900;
     font-size: 72px;
     line-height: 72px;
     color: #fefcf7;
+  }
+  .hero__text-box {
+    max-width: 445px;
+    width: 100%;
   }
   .hero__text {
     font-weight: 400;
@@ -318,5 +496,62 @@ nav {
     line-height: 26px;
     color: #fefcf7;
     opacity: 0.8;
+  }
+  .our-collection__wrapper {
+    margin: 0 auto;
+    background-image: url("./images/ourcollection.svg");
+    background-position: center calc(0% + 125px);
+    background-size: 900px 150px;
+    background-repeat: no-repeat;
+  }
+  .our-collection__item {
+    display: flex;
+    justify-content: center;
+  }
+  .our-collection__inner {
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .our-collection__wrapper {
+    margin: 0 auto;
+    background-image: url("./images/ourcollection.svg");
+    background-position: center calc(0% + 150px);
+    background-size: 1111px 196px;
+    background-repeat: no-repeat;
+  }
+  .our-collection__list {
+    display: flex;
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+  .our-collection__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 256px;
+    padding-left: 0px;
+  }
+  .our-collection__item:nth-child(1) {
+    padding: 0;
+  }
+  .our-collection__item:not(:last-child) {
+    margin-right: 30px;
+    margin-bottom: 0px;
+  }
+  .our-collection__img {
+    margin-bottom: 71px;
+  }
+  .our-collection__subtitle {
+    margin-bottom: 24px;
+    padding: 0;
+    text-align: center;
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .our-collection__text {
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
   }
 }
