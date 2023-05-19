@@ -106,13 +106,14 @@ nav {
 .hero__inner {
   max-width: 279px;
   width: 100%;
+  text-align: center;
 }
 .hero__title {
   font-family: "Fraunces";
   font-weight: 900;
   margin-top: 0;
   margin-bottom: 24px;
-  font-size: 40px;
+  font-size: 39px;
   line-height: 40px;
   color: #fefcf7;
 }
@@ -125,6 +126,10 @@ nav {
   color: #fefcf7;
   mix-blend-mode: normal;
   opacity: 0.8;
+}
+.hero__link-box {
+  display: flex;
+  justify-content: center;
 }
 .hero__link {
   font-family: "Fraunces";
@@ -325,6 +330,85 @@ nav {
   line-height: 20px;
   color: #fefcf7;
 }
+.works {
+  margin-bottom: 120px;
+}
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.works__title {
+  font-family: "Fraunces";
+  font-weight: 900;
+  margin-top: 0;
+  margin-bottom: 80px;
+  font-size: 24px;
+  line-height: 32px;
+  text-align: center;
+  color: #83888f;
+}
+.works__list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.works__item {
+  max-width: 280px;
+  width: 100%;
+  margin:0 auto 56px;
+}
+.works__subtitle::before {
+  display: block;
+  width: 80px;
+  height: 62px;
+  margin: 0 auto 24px;
+  background-image: url("./images/first.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "";
+}
+.works__item:nth-child(2) > .works__subtitle::before {
+  background-image: url("./images/second.svg");
+}
+.works__item:nth-child(3) > .works__subtitle::before {
+  background-image: url("./images/third.svg");
+}
+.works__subtitle {
+  font-family: "Fraunces";
+  font-weight: 900;
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 24px;
+  line-height: 32px;
+  text-align: center;
+  color: #333d4b;
+}
+.works__text {
+  margin: 0;
+  font-size: 13px;
+  line-height: 25px;
+  text-align: center;
+  color: #333d4b;
+}
+.works__inner {
+  display: flex;
+  justify-content: center;
+}
+.works__link {
+  font-family: "Fraunces";
+  font-weight: 900;
+  padding: 16px 31px;
+  background-color: #0e8784;
+  color: #fefcf7;
+  border-radius: 6px;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  text-decoration-line: none;
+}
+
 @media only screen and (min-width: 375px) {
   .hero__wrapper {
     min-width: 320px;
@@ -348,9 +432,14 @@ nav {
   .hero__title {
     font-family: "Fraunces";
     font-weight: 900;
-    font-size: 48px;
+    font-size: 45px;
     line-height: 48px;
     color: #fefcf7;
+  }
+  .hero__link-box {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 30px;
   }
   .our-collection__wrapper {
     margin: 0 auto;
@@ -428,6 +517,23 @@ nav {
     line-height: 32px;
   }
   .info__desc {
+    font-size: 15px;
+    line-height: 25px;
+  }
+  .works__item {
+    max-width: 327px;
+    width: 100%;
+    padding: 0 10px;
+  }
+  .works__subtitle::before {
+    width: 90px;
+    height: 72px;
+  }
+  .works__subtitle {
+    font-size: 28px;
+    line-height: 32px;
+  }
+  .works__text {
     font-size: 15px;
     line-height: 25px;
   }
@@ -557,6 +663,12 @@ nav {
     color: #fefcf7;
     font-size: 48px;
   }
+  .hero__inner {
+    text-align: start;
+  }
+  .hero__link-box {
+    margin-left: 0;
+  }
   .our-collection__wrapper {
     margin: 0 auto;
     background-image: url("./images/ourcollection.svg");
@@ -617,6 +729,56 @@ nav {
   .info__desc {
     font-size: 22px;
     line-height: 32px;
+  }
+  .works__title {
+    margin-bottom: 119px;
+    text-align: start;
+  }
+  .works__list {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .works__item {
+    max-width: 168px;
+    width: 100%;
+    margin: 0 0 40px 0;
+    border-top: 2px solid #fdd6ba;
+    
+  }
+  .works__item::before {
+    position: absolute;
+    top: -75px;
+    display: block;
+    width: 31px;
+    height: 31px;
+    background: #FEFCF7;
+    border: 2px solid #0e8784;
+    border-radius: 50%;
+    content: "";
+  }
+  .works__subtitle::before {
+    display: block;
+    width: 80px;
+    height: 62px;
+    margin: 0 0 35px;
+  }
+  .works__subtitle {
+    margin-bottom: 35px;
+    font-size: 26px;
+    line-height: 32px;
+    text-align: start;
+  }
+  .works__text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: start;
+  }
+  .works__inner {
+    display: flex;
+    justify-content: flex-start;
   }
 }
 @media only screen and (min-width: 600px) {
@@ -856,6 +1018,38 @@ nav {
     font-size: 15px;
     line-height: 25px;
   }
+  .works__title {
+    margin-bottom: 130px;
+    font-size: 26px;
+  }
+  .works__list {
+    align-items: flex-start;
+    
+  }
+  .works__item {
+    max-width: 223px;
+    width: 100%;
+    margin-bottom: 46px;
+  }
+  .works__item::before {
+    position: absolute;
+    top: -85px;
+  }
+  .works__subtitle::before {
+    display: block;
+    width: 101px;
+    height: 92px;
+    margin: 0 0 35px;
+  }
+  .works__subtitle {
+    margin-bottom: 39px;
+    font-size: 28px;
+    line-height: 32px;
+  }
+  .works__text {
+    font-size: 15px;
+    line-height: 25px;
+  }
 }
 @media only screen and (min-width: 800px) {
   .info__wrapper {
@@ -1014,6 +1208,31 @@ nav {
     font-size: 15px;
     line-height: 25px;
   }
+  .works__title {
+    margin-bottom: 178px;
+    font-size: 28px;
+  }
+  .works__item {
+    max-width: 285px;
+    width: 100%;
+    margin-bottom: 64px;
+  }
+  .works__item::before {
+    position: absolute;
+    top: -95px;
+  }
+  .works__subtitle::before {
+    margin-bottom: 38px;
+  }
+  .works__subtitle {
+    margin-bottom: 39px;
+    font-size: 32px;
+    line-height: 36px;
+  }
+  .works__text {
+    font-size: 16px;
+    line-height: 26px;
+  }
 }
 
 @media only screen and (min-width: 1020px) {
@@ -1147,5 +1366,26 @@ nav {
   .info__desc {
     font-size: 16px;
     line-height: 26px;
+  }
+  .works__item {
+    max-width: 350px;
+    width: 100%;
+    margin-bottom: 64px;
+  }
+  .works__subtitle::before {
+    margin-bottom: 40px;
+  }
+  .works__item::before {
+    position: absolute;
+    top: -105px;
+  }
+  .works__subtitle {
+    margin-bottom: 42px;
+    font-size: 40px;
+    line-height: 38px;
+  }
+  .works__text {
+    font-size: 18px;
+    line-height: 28px;
   }
 }
